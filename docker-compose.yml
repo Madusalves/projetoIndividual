@@ -1,0 +1,18 @@
+# Banco PostgreSQL somente local: a porta só é exposta em 127.0.0.1.
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: biblioteca-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: biblioteca
+      POSTGRES_USER: biblioteca
+      POSTGRES_PASSWORD: biblioteca_local
+    ports:
+      - "127.0.0.1:5433:5432"
+    volumes:
+      - biblioteca-dados:/var/lib/postgresql/data
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+
+volumes:
+  biblioteca-dados:
