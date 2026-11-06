@@ -3,6 +3,10 @@
 Aplicação desktop em C# (.NET 8, Windows Forms) para gerenciar acervo, usuários e empréstimos de uma biblioteca.
 Os dados ficam em um **PostgreSQL rodando em Docker, somente local** (porta exposta apenas em `127.0.0.1:5433`).
 
+## Por que C#?
+
+Escolhi C# porque é a linguagem com a qual eu trabalho e, na minha opinião, é a melhor. 😄
+
 ## Executar
 
 ```text
